@@ -13,6 +13,7 @@ public class MemoryMemberRepository implements MemberRepository{
     public Member save(Member member) {
         //키값이 이미 있으면 null 반환
         if (store.containsKey(member.getStudentId())) {
+            System.out.println("이미 존재하는 아이디입니다.");
             return null;
         }
         else {
@@ -24,8 +25,8 @@ public class MemoryMemberRepository implements MemberRepository{
     @Override
     public Optional<Member> findById(Long Id) {
         return store.values().stream()
-                .findAny()
-                .filter(member -> member.getStudentId().equals(Id));
+                .filter(member -> member.getStudentId().equals(Id))
+                .findAny();
     }
 
 
