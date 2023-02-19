@@ -15,9 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MemoryMemberRepositoryTest {
 
-
-
-    MemoryMemberRepository memberRepository = new MemoryMemberRepository();
+    MemoryMemberRepository memberRepository = MemoryMemberRepository.getInstance();
 
     @AfterEach
     public void clareStore(){

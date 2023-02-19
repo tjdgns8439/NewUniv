@@ -2,9 +2,19 @@ package com.example.NewUniv.repository;
 
 import com.example.NewUniv.member.Member;
 
+
 import java.util.*;
 
 public class MemoryMemberRepository implements MemberRepository{
+
+    private static final MemoryMemberRepository instance = new MemoryMemberRepository();
+
+    public static MemoryMemberRepository getInstance() {
+        return instance;
+    }
+
+    private MemoryMemberRepository() {
+    }
 
     //<id, Member>
     private static Map<Long, Member> store = new HashMap<>();

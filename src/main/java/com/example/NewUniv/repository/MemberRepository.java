@@ -19,5 +19,6 @@ public interface MemberRepository {
     //전체 조회
     List<Member> findAll();
 
+    //테스트
     void clear();
 }
