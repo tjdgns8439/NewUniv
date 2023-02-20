@@ -5,20 +5,26 @@ import com.example.NewUniv.member.MemberForm;
 import com.example.NewUniv.repository.MemberRepository;
 import com.example.NewUniv.repository.MemoryMemberRepository;
 import com.example.NewUniv.service.MemberService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.Banner;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 import java.util.Map;
 
 @org.springframework.stereotype.Controller
+
 public class Controller {
 
     MemoryMemberRepository memberRepository = MemoryMemberRepository.getInstance();
 
-    @GetMapping(value = "/members/new-form")
+    @RequestMapping(value = "/members/new-form")
     public String createForm(MemberForm form) {
         Member member = new Member(form.getId(), form.getName());
         memberRepository.save(member);
@@ -26,10 +32,21 @@ public class Controller {
     }
 
 
-    @GetMapping(value = "/members")
+    @RequestMapping(value = "/members")
     public String list(Model model) {
         List<Member> members = memberRepository.findAll();
         model.addAttribute("members", members);
         return "members/memberList";
+    }
+
+    @RequestMapping("/members/save")
+    public String save(HttpServletRequest request, HttpServletResponse response){
+        Long id = Long.parseLong(request.getParameter("id"));
+        String name = request.getParameter("name");
+
+        Member member = new Member(id, name);
+        memberRepository.save(member);
+
+        return "index";
     }
 }
