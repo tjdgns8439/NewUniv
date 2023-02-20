@@ -2,24 +2,16 @@ package com.example.NewUniv.controller;
 
 import com.example.NewUniv.member.Member;
 import com.example.NewUniv.member.MemberForm;
-import com.example.NewUniv.repository.MemberRepository;
 import com.example.NewUniv.repository.MemoryMemberRepository;
-import com.example.NewUniv.service.MemberService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
-import java.util.Map;
 
 @org.springframework.stereotype.Controller
-
 public class Controller {
 
     MemoryMemberRepository memberRepository = MemoryMemberRepository.getInstance();
