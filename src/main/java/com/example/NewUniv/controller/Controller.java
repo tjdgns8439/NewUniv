@@ -24,7 +24,7 @@ public class Controller {
 
     MemoryMemberRepository memberRepository = MemoryMemberRepository.getInstance();
 
-    @RequestMapping(value = "/members/new-form")
+    @GetMapping(value = "/members/new-form")
     public String createForm(MemberForm form) {
         Member member = new Member(form.getId(), form.getName());
         memberRepository.save(member);
@@ -32,14 +32,14 @@ public class Controller {
     }
 
 
-    @RequestMapping(value = "/members")
+    @GetMapping(value = "/members")
     public String list(Model model) {
         List<Member> members = memberRepository.findAll();
         model.addAttribute("members", members);
         return "members/memberList";
     }
 
-    @RequestMapping("/members/save")
+    @PostMapping("/members/save")
     public String save(HttpServletRequest request, HttpServletResponse response){
         Long id = Long.parseLong(request.getParameter("id"));
         String name = request.getParameter("name");
