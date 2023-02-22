@@ -1,4 +1,4 @@
-package com.example.NewUniv.member;
+package com.example.NewUniv.model;
 
 public class MemberForm {
     private Long id;

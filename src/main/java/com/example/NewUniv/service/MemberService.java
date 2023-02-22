@@ -1,12 +1,9 @@
 package com.example.NewUniv.service;
 
 
-import com.example.NewUniv.member.Member;
+import com.example.NewUniv.model.Member;
 import com.example.NewUniv.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 

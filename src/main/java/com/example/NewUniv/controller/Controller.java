@@ -1,7 +1,6 @@
 package com.example.NewUniv.controller;
 
-import com.example.NewUniv.member.Member;
-import com.example.NewUniv.member.MemberForm;
+import com.example.NewUniv.model.Member;
 import com.example.NewUniv.repository.MemoryMemberRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -17,9 +16,7 @@ public class Controller {
     MemoryMemberRepository memberRepository = MemoryMemberRepository.getInstance();
 
     @GetMapping(value = "/members/new-form")
-    public String createForm(MemberForm form) {
-        Member member = new Member(form.getId(), form.getName());
-        memberRepository.save(member);
+    public String createForm() {
         return "members/createMember";
     }
 

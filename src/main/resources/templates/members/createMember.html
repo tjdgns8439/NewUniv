@@ -7,8 +7,8 @@
 <body>
 <!-- 상대경로 사용, [현재 URL이 속한 계층 경로 + /save] -->
 <form action="save" method="post">
-    id: <input type="text" name="id" />
-    name: <input type="text" name="name" />
+    id: <input type="text" name="id" required/>
+    name: <input type="text" name="name" required/>
     <button type="submit" onclick="location.href='/members/save' ">전송</button>
 </form>
 </body>

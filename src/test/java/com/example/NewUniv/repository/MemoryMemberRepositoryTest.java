@@ -1,17 +1,12 @@
 package com.example.NewUniv.repository;
 
-import com.example.NewUniv.member.Member;
-import com.example.NewUniv.service.MemberService;
+import com.example.NewUniv.model.Member;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class MemoryMemberRepositoryTest {
 

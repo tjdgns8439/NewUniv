@@ -1,6 +1,6 @@
 package com.example.NewUniv.repository;
 
-import com.example.NewUniv.member.Member;
+import com.example.NewUniv.model.Member;
 
 
 import java.util.*;
