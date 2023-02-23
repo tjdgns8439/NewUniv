@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
+import java.util.Optional;
 
 @org.springframework.stereotype.Controller
 public class Controller {
@@ -30,11 +31,13 @@ public class Controller {
 
     @PostMapping("/members/save")
     public String save(HttpServletRequest request, HttpServletResponse response){
+
         Long id = Long.parseLong(request.getParameter("id"));
         String name = request.getParameter("name");
-
         Member member = new Member(id, name);
-        memberRepository.save(member);
+        if(memberRepository.save(member) == null){
+            return "exception/saveFail";
+        }
 
         return "index";
     }

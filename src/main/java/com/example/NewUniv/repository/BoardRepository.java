@@ -25,6 +25,7 @@ public class BoardRepository {
         board.setWriterName(board.getWriterName());
         board.setTitle(board.getTitle());
         board.setContent(board.getContent());
+
         store.put(board.getBoardNumber(), board);
         return board;
     }

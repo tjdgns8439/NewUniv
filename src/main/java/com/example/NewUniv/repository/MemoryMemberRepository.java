@@ -39,7 +39,6 @@ public class MemoryMemberRepository implements MemberRepository{
                 .findAny();
     }
 
-
     @Override
     public void delete(Member member) {
         store.remove(member.getStudentId());
