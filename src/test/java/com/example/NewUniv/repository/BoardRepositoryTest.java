@@ -26,8 +26,6 @@ class BoardRepositoryTest {
     void save() {
         //given
         Member member1 = new Member(1L,"Member1");
-        Member member2 = new Member(2L,"Member2");
-
 
         //when
         Board board = new Board(member1.getStudentId(),member1.getName(),"게시판1","~~~~");
@@ -173,8 +171,6 @@ class BoardRepositoryTest {
             System.out.println(board.toString());
         }
         assertThat(board1).isNotIn(boardList);
-
     }
-
 
 }

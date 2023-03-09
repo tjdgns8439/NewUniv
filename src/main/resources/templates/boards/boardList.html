@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <title>회원 목록</title>
+    <title>게시글 목록</title>
 </head>
 <body>
 <div class="container" style="max-width: 600px">
     <div class="py-5 text-center">
-        <h2>학생 목록</h2>
+        <h2>게시글 목록</h2>
     </div>
 
     <div class="row">
@@ -18,7 +18,7 @@
         </div>
         <div class="col">
             <button class="btn btn-primary float-end"
-                    onclick="location.href='/members/new-form'" type="button">학생 등록</button>
+                    onclick="location.href='/boards/new-form'" type="button">게시글 등록</button>
         </div>
     </div>
 
@@ -28,13 +28,23 @@
         <table class="table">
             <thead>
             <tr>
-                <th>ID</th>
-                <th>학생이름</th>
+                <th>게시물 번호</th>
+                <th>학번</th>
+                <th>이름</th>
+                <th>제목</th>
+                <th>내용</th>
             </thead>
-            <tr th:each="member : ${members}">
-                <td th:text="${member.studentId}"></td>
-                <td th:text="${member.name}"></td>
+
+            <tbody  th:each="board: ${boards}">
+            <tr>
+                <td><a th:text="${board.boardNumber}"></a></td>
+                <td><a th:text="${board.writerId}"></a></td>
+                <td><a th:text="${board.writerName}"></a></td>
+                <td><a th:text="${board.title}"></a></td>
+                <td><a th:text="${board.content}"></a></td>
             </tr>
+
+            </tbody>
         </table>
     </div>
 

@@ -1,15 +1,39 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<head>
+    <h1>편입 게시판</h1>
+    <meta charset="UTF-8">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <title>인덱스 페이지</title>
+</head>
 <body>
-<div class="container">
-    <div>
-        <h1>편입 게시판</h1>
-        <p>
-        <li><a href="/members/new-form">회원 가입</a></li>
-        <li><a href="/members">회원 목록</a></li>
-        </p>
+<div class="container" style="max-width: 600px; margin-top: 100px">
+
+    <div class="row justify-content-center"
+         style=" padding: 3px;margin: 5px">
+        <div class="col d-flex justify-content-center">
+            <button class="btn btn-primary float-end"
+                    onclick="location.href='/members/new-form'" type="button">학생 등록</button>
+        </div>
+
+        <div class="col d-flex justify-content-center">
+            <button class="btn btn-primary float-end"
+                    onclick="location.href='/members'" type="button">학생 목록</button>
+        </div>
     </div>
+
+    <div class="row justify-content-center"
+         style=" padding: 3px;margin: 5px">
+        <div class="col d-flex justify-content-center">
+            <button class="btn btn-primary float-end"
+                    onclick="location.href='/boards/new-form'" type="button">게시글 등록</button>
+        </div>
+        <div class="col d-flex justify-content-center">
+            <button class="btn btn-primary float-end"
+                    onclick="location.href='/boards'" type="button">게시글 목록</button>
+        </div>
+    </div>
+
+
 
 </div>
 </body>
-</html>

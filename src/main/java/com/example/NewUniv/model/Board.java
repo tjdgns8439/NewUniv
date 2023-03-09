@@ -16,7 +16,6 @@ public class Board {
     public Board(Long writerId, String writerName,  String title, String content) {
         this.writerId = writerId;
         this.writerName = writerName;
-
         this.title = title;
         this.content = content;
 

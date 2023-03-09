@@ -2,7 +2,6 @@ package com.example.NewUniv.repository;
 
 import com.example.NewUniv.model.Member;
 
-
 import java.util.*;
 
 public class MemoryMemberRepository implements MemberRepository{
